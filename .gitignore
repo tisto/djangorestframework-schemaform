@@ -10,4 +10,7 @@ dist/
 include/
 locale/
 __pycache__
+node_modules
+example/client/public/*.svg
+example/client/public/*.woff
 
