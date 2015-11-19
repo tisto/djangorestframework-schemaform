@@ -1,11 +1,13 @@
 *.pyc
 .coverage
+.cache
 .junit.xml
 .tox/
 *.egg-info/
 lib/
 bin/
 dist/
+include/
 locale/
 __pycache__
 
