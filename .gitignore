@@ -1,0 +1,11 @@
+*.pyc
+.coverage
+.junit.xml
+.tox/
+*.egg-info/
+lib/
+bin/
+dist/
+locale/
+__pycache__
+
