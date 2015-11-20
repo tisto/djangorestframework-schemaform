@@ -22,4 +22,5 @@ script:
   - tox
 after_script:
   - firefox --version
+  - flake8 --version
 
