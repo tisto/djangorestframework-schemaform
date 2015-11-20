@@ -6,10 +6,15 @@ tox
 
 # Code Analysis
 flake8
-flake8-coding
-flake8-print
-flake8-blind-except
-flake8-debugger
+#flake8-coding
+#flake8-print
+#flake8-blind-except
+#flake8-debugger
+
+# Release
+# wheel
+# setuptools>=14
+# setuptools_scm
 
 # Devpi
 devpi-client
