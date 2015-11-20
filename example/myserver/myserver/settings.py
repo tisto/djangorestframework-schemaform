@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'rest_framework_schemaform',
+    'myserver',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -50,6 +52,18 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+    'PAGE_SIZE': 10,
+    'DEFAULT_CONTENT_NEGOTIATION_CLASS':
+        'rest_framework_schemaform.negotiation.IgnoreClientContentNegotiation',
+    'DEFAULT_RENDERER_CLASSES': (
+#        'rest_framework_schemaform.renderers.JSONSchemaRenderer',
+#        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework.renderers.JSONRenderer',
+    ),
+}
 
 ROOT_URLCONF = 'myserver.urls'
 
