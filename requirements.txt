@@ -1,1 +1,6 @@
 djangorestframework
+
+# dev
+wheel
+setuptools>=14
+setuptools_scm
