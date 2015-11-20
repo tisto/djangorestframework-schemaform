@@ -18,7 +18,7 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - psql -c "CREATE DATABASE mydb;" -U postgres
 script:
-  - flake8 .
+  - flake8 rest_framework_schemaform
   - tox
 after_script:
   - firefox --version
