@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='djangorestframework-schemaform',
-    version='1.0a1',
+    use_scm_version=True,
     license='BSD',
     author='Timo Stollenwerk',
     author_email='tisto@plone.org',
@@ -13,6 +13,7 @@ setup(
     keywords=['django', 'rest-framework', 'json', 'schemaform', 'angular'],
     packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=['django', 'djangorestframework'],
+    setup_requires=['setuptools_scm'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
