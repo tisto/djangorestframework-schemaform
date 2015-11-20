@@ -13,4 +13,5 @@ __pycache__
 node_modules
 example/client/public/*.svg
 example/client/public/*.woff
+RELEASE.sh
 
