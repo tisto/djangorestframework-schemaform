@@ -24,6 +24,23 @@ def test_char_field_serializer():
 
 
 @pytest.mark.django_db
+def test_foreign_key_field_serializer():
+    from rest_framework_schemaform.models import CharFieldModel
+    from rest_framework_schemaform.models import ForeignKeyModel
+
+    reference = CharFieldModel()
+    reference.field = u'My CharFieldTest'
+    reference.save()
+
+    model = ForeignKeyModel()
+    model.field = reference
+    model.save()
+
+    serializer = JsonSchemaSerializer(model)
+    result = serializer.to_representation(model)
+
+
+@pytest.mark.django_db
 def test_json_schema_serializer():
     app = Application()
     app.title = u'My first application'

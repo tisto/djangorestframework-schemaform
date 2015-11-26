@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from rest_framework import fields
+from rest_framework import relations
 
 # Mapping from Django REST Framework models to JSON schema
 # http://www.django-rest-framework.org/api-guide/fields/
@@ -43,4 +44,5 @@ REST_MODEL_TO_JSON_SCHEMA_MAPPING = {
     fields.HiddenField: {'type': 'string'},
     fields.ModelField: {'type': 'string'},
     fields.SerializerMethodField: {'type': 'string'},
+    relations.PrimaryKeyRelatedField: {'type': 'string'},
 }

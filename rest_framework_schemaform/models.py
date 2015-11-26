@@ -93,6 +93,11 @@ class NullBooleanField(models.Model):
     )
 
 
+class ForeignKeyModel(models.Model):
+
+    field = models.ForeignKey(CharFieldModel)
+
+
 class Application(models.Model):
 
     title = models.CharField(
