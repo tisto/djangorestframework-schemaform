@@ -5,6 +5,14 @@ from rest_framework.response import Response
 from myserver.models import Application
 from rest_framework_schemaform.serializers import JsonSchemaSerializer
 
+from django.shortcuts import render_to_response
+
+
+def index(request):
+    return render_to_response(
+        'myserver/index.html'
+    )
+
 
 class ApplicationViewSet(viewsets.ModelViewSet):
     """

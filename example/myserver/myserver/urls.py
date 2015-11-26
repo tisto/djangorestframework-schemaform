@@ -24,6 +24,7 @@ router.register(r'application', views.ApplicationViewSet)
 
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
     url(r'^', include(router.urls)),
     url(r'^admin/', admin.site.urls),
 ]

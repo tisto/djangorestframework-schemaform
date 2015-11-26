@@ -4,6 +4,7 @@
 .junit.xml
 .tox/
 *.egg-info/
+*.egg
 lib/
 bin/
 dist/
@@ -11,7 +12,12 @@ include/
 locale/
 __pycache__
 node_modules
-example/client/public/*.svg
-example/client/public/*.woff
+*.svg
+*.woff
+*.woff2
+*.ttf
+*.eot
 RELEASE.sh
+bundle.js
+bundle.js.map
 
