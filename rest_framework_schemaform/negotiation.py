@@ -3,7 +3,7 @@ from rest_framework.negotiation import BaseContentNegotiation
 from rest_framework_schemaform.renderers import JSONSchemaRenderer
 
 
-class IgnoreClientContentNegotiation(BaseContentNegotiation):
+class JSONSchemaContentNegotiation(BaseContentNegotiation):
 
     def select_parser(self, request, parsers):
         """Select the first parser in the `.parser_classes` list.
