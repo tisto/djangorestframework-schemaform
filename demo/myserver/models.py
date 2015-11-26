@@ -1,11 +1,3 @@
 # -*- coding: utf-8 -*-
-from django.db import models
-
-
-class Application(models.Model):
-
-    title = models.CharField(
-        u'Title',
-        help_text=u'Title of the application',
-        max_length=255
-    )
+from django.db import models  # noqa
+from rest_framework_schemaform.models import Application  # noqa
