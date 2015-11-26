@@ -1,0 +1,8 @@
+wheel
+setuptools>=14
+setuptools_scm
+
+Pillow
+
+django
+djangorestframework
