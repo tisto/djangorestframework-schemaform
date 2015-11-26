@@ -38,6 +38,7 @@ def test_foreign_key_field_serializer():
 
     serializer = JsonSchemaSerializer(model)
     result = serializer.to_representation(model)
+    assert 'string' == result.get('properties').get('field').get('type')
 
 
 @pytest.mark.django_db
