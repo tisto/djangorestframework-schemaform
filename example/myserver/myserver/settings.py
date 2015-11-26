@@ -57,7 +57,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'PAGE_SIZE': 10,
     'DEFAULT_CONTENT_NEGOTIATION_CLASS':
-        'rest_framework_schemaform.negotiation.IgnoreClientContentNegotiation',
+        'rest_framework_schemaform.negotiation.JSONSchemaContentNegotiation',
     'DEFAULT_RENDERER_CLASSES': (
 #        'rest_framework_schemaform.renderers.JSONSchemaRenderer',
 #        'rest_framework.renderers.BrowsableAPIRenderer',
