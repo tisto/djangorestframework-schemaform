@@ -1,5 +1,22 @@
 <navbar></navbar>
-<h1>You can find my template inside {{ vm.name }}.html</h1>
+<h1>Application Form</h1>
 <section>
-  About us.
+
+  <pre>{{vm.response | json}}</pre>
+
+  <form name='form'
+        sf-schema='vm.schema'
+        sf-form='vm.form'
+        sf-model='vm.model'
+        ng-submit="vm.onSubmit(form)"></form>
+
+  <h3>Schema</h3>
+  <pre>{{vm.schema | json}}</pre>
+
+  <h3>Form</h3>
+  <pre>{{vm.form | json}}</pre>
+
+  <h3>Model</h3>
+  <pre>{{vm.model | json}}</pre>
+
 </section>
