@@ -21,7 +21,7 @@ from myserver import views
 
 router = routers.DefaultRouter()
 router.register(r'application', views.ApplicationViewSet)
-
+router.register(r'user', views.UserViewSet)
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
