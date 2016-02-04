@@ -43,7 +43,7 @@ class JsonSchemaSerializer(serializers.ModelSerializer):
         # Form Helper
         result['form'].append({
             'type': 'help',
-            'helpvalue': '<div class="alert alert-info">Example Form</div>'
+            'helpvalue': '<div class="alert alert-info">Alert Example</div>'
         })
 
         # Form Keys
