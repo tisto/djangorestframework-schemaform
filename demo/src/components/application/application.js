@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import aboutComponent from './about.component';
-import aboutService from './about.service';
+import applicationComponent from './application.component';
+import applicationService from './application.service';
 import ngSanitize from 'angular-sanitize';
 require('script!tv4/tv4.js');
 require('script!objectpath/lib/ObjectPath');
@@ -11,20 +11,20 @@ require('script!angular-schema-form/dist/bootstrap-decorator');
 // import schemaForm from 'angular-schema-form/dist/schema-form';
 // import 'angular-schema-form/dist/bootstrap-decorator';
 
-let aboutModule = angular.module('about', [
+let applicationModule = angular.module('application', [
   uiRouter,
   schemaForm.name
 ])
 
 .config(($stateProvider) => {
   $stateProvider
-    .state('about', {
-      url: '/about',
-      template: '<about></about>'
+    .state('application', {
+      url: '/application',
+      template: '<application></application>'
     });
 })
 
-.directive('about', aboutComponent)
-.service('aboutService', aboutService);
+.directive('application', applicationComponent)
+.service('applicationService', applicationService);
 
-export default aboutModule;
+export default applicationModule;

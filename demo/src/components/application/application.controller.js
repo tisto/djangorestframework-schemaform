@@ -1,7 +1,7 @@
-class AboutController {
+class ApplicationController {
 
-  constructor(aboutService) {
-    this.name = 'Contact Us'
+  constructor(applicationService) {
+    this.name = 'Contact Us';
     this.model = {};
     this.schema = {
       type: "object",
@@ -24,7 +24,7 @@ class AboutController {
       }
     ];
     this.result = {};
-    this.service = aboutService;
+    this.service = applicationService;
   }
 
   getSchema() {
@@ -50,4 +50,4 @@ class AboutController {
   }
 }
 
-export default AboutController;
+export default ApplicationController;

@@ -1,6 +1,6 @@
-class AboutService {
+class ApplicationService {
   constructor($http) {
-    this.$http = $http
+    this.$http = $http;
   }
 
   getSchema() {
@@ -14,4 +14,4 @@ class AboutService {
   }
 }
 
-export default AboutService;
+export default ApplicationService;
