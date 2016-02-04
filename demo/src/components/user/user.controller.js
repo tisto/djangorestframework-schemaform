@@ -2,38 +2,18 @@ class UserController {
 
   constructor(userService) {
     this.name = 'User';
-    this.model = {};
-    this.schema = {
-      type: 'object',
-      properties: {
-        name: { type: 'string', minLength: 2, title: 'Name', description: 'Name or alias' },
-        title: {
-          type: 'string',
-          enum: ['dr','jr','sir','mrs','mr','NaN','dj']
-        }
-      },
-      'required': [
-        'name'
-      ]
-    };
-    this.form = [
-      '*',
-      {
-        type: 'submit',
-        title: 'Save'
-      }
-    ];
     this.result = {};
     this.service = userService;
+    this.model = {};
+    this.schema = {};
+    this.form = [];
+    this.getSchema();
   }
 
   getSchema() {
     this.service.getSchema().then((res) => {
-      this.result = res.data;
-      console.log(this.result);
-      this.schema = res.data;
-      this.form = res.data.form;
-      alert('getSchema');
+      this.schema = res;
+      this.form = res.form;
     });
   }
 
