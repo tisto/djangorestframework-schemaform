@@ -14,4 +14,4 @@ class User(models.Model):
     phone = models.CharField(max_length=100, null=True, blank=True)
     mobil = models.CharField(max_length=100, null=True, blank=True)
     lastlogin = models.DateTimeField(null=True, blank=True)
-    salutation = models.ForeignKey(Application, null=True)
+    application = models.ForeignKey(Application, null=True)
