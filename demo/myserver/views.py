@@ -22,14 +22,28 @@ class ApplicationViewSet(viewsets.ModelViewSet):
     queryset = Application.objects.all()
     serializer_class = JsonSchemaSerializer
 
+    # GET
+    # http GET http://localhost:8000/application/
     def list(self, request):
         queryset = Application.objects.all()
         app = Application()
         serializer = JsonSchemaSerializer(app)
         return Response(serializer.data)
 
+    # POST
+    # http POST http://localhost:8000/application/ title=foo
     def create(self, request):
-        pass
+        if 'title' not in request.data:
+            return Response({'message': 'title is required.'})
+        app = Application(
+            title=request.data.get('title')
+        )
+        app.save()
+        # Todo: reverse()
+        return Response({
+            'message': 'resource created.',
+            'url': 'reverse()'
+        })
 
     def detail(self, request, pk=None):
         pass
