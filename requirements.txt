@@ -1,3 +1,2 @@
 djangorestframework
-robotframework-djangolibrary
 
