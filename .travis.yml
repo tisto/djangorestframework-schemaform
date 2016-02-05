@@ -26,5 +26,5 @@ after_script:
   - firefox --version
   - flake8 --version
 after_failure:
-  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then cat report.html; fi
+  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then cat log.html; fi
 
