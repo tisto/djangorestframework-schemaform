@@ -8,7 +8,7 @@ env:
   - DJANGO_VERSION=1.9.2
 services: postgresql
 install:
-  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pip install robotframework-djangolibrary; fi
+  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pip install robotframework-djangolibrary Pillow; fi
   - pip install -r requirements/dev.txt
   - pip install -q Django==$DJANGO_VERSION
   - pip install psycopg2 --quiet
