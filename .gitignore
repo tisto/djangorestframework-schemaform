@@ -17,6 +17,7 @@ node_modules
 *.woff2
 *.ttf
 *.eot
+*.sqlite3
 .env-py27
 RELEASE.sh
 bundle.js
