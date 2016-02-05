@@ -27,4 +27,4 @@ after_script:
   - flake8 --version
 after_failure:
   - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then cat log.html; fi
-
+  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then cat selenium-screenshot-1.png; fi
