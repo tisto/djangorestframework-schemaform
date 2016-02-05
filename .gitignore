@@ -18,7 +18,12 @@ node_modules
 *.woff2
 *.ttf
 *.eot
+.env-py27
 RELEASE.sh
 bundle.js
 bundle.js.map
+log.html
+output.xml
+report.html
+selenium-screenshot-1.png
 
