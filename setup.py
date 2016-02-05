@@ -13,7 +13,6 @@ setup(
     keywords=['django', 'rest-framework', 'json', 'schemaform', 'angular'],
     packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=['django', 'djangorestframework'],
-    setup_requires=['setuptools_scm'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
