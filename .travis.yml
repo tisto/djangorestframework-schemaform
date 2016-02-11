@@ -6,7 +6,6 @@ python:
 env:
   - DJANGO_VERSION=1.8.9
   - DJANGO_VERSION=1.9.2
-  - TRAVIS_NODE_VERSION="4"
 # services: postgresql
 install:
   - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pip install robotframework-djangolibrary robotframework-angularjs Pillow; fi
@@ -19,10 +18,8 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 #   - psql -c "CREATE DATABASE mydb;" -U postgres
-  - node --version
   - nvm install 4.3
   - nvm use 4.3
-  - node --version
   - cd demo
   - npm install
   - webpack --bail
