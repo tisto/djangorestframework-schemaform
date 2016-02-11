@@ -8,10 +8,9 @@ env:
   - DJANGO_VERSION=1.9.2
 services: postgresql
 install:
-  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pip install robotframework-djangolibrary Pillow; fi
+  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pip install robotframework-djangolibrary robotframework-angularjs Pillow; fi
   - pip install -r requirements/dev.txt
   - pip install -q Django==$DJANGO_VERSION
-  - pip install -q robotframework-angularjs
   - pip install psycopg2 --quiet
   - pip install tox-travis
   - python setup.py develop
