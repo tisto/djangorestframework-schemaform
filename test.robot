@@ -1,15 +1,21 @@
 *** Variables ***
 
-${SERVER}               http://localhost:55001/
+${HOSTNAME}             127.0.0.1
+${PORT}                 55001
+${SERVER}               http://${HOSTNAME}:${PORT}/
 ${BROWSER}              firefox
+${DJANGO_PATH}          demo/myserver
+${DJANGO_MANAGE_PY}     demo/manage.py
+${DJANGO_SETTINGS}      myserver.settings
+${DJANGO_DB}            demo/db.sqlite3
 
 
 *** Settings ***
 
 Documentation   Django Robot Tests
 Library         Selenium2Library  timeout=10  implicit_wait=0
-Library         DjangoLibrary  127.0.0.1  55001  path=demo/myserver  manage=demo/manage.py  settings=myserver.settings  db=demo/db.sqlite3
-
+Library         AngularJSLibrary
+Library         DjangoLibrary  ${HOSTNAME}  ${PORT}  path=${DJANGO_PATH}  manage=${DJANGO_MANAGE_PY}  settings=${DJANGO_SETTINGS}  db=${DJANGO_DB}
 Suite Setup     Start Django and open Browser
 Suite Teardown  Stop Django and close Browser
 
@@ -33,5 +39,13 @@ Open Browser To Login Page
 
 Scenario: As a visitor I can visit the django default page
   Go To  ${SERVER}
-  Wait until page contains element  css=.jumbotron
+  Wait for Angular
   Page Should Contain  Schemaform Demo
+
+  Click Link  Application
+  Wait for Angular
+  Page should contain element  xpath=//input[@ng-model="model['id']"]
+
+  Click Link  User
+  Wait for Angular
+  Page should contain element  xpath=//input[@ng-model="model['id']"]

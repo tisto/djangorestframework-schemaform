@@ -6,20 +6,30 @@ python:
 env:
   - DJANGO_VERSION=1.8.9
   - DJANGO_VERSION=1.9.2
-services: postgresql
+# services: postgresql
 install:
+  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pip install robotframework-djangolibrary robotframework-angularjs Pillow; fi
   - pip install -r requirements/dev.txt
   - pip install -q Django==$DJANGO_VERSION
-  - pip install psycopg2 --quiet
+#   - pip install psycopg2 --quiet
   - pip install tox-travis
+  - python setup.py develop
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - psql -c "CREATE DATABASE mydb;" -U postgres
+#   - psql -c "CREATE DATABASE mydb;" -U postgres
+  - nvm install 4.3
+  - nvm use 4.3
+  - cd demo
+  - npm install
+  - webpack --bail
+  - cd ..
 script:
   - flake8 rest_framework_schemaform
   - tox
+  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pybot test.robot; fi
 after_script:
   - firefox --version
   - flake8 --version
-
+after_failure:
+  - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then cat log.html; fi

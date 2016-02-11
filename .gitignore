@@ -12,12 +12,12 @@ include/
 locale/
 __pycache__
 node_modules
-*.sqlite3
 *.svg
 *.woff
 *.woff2
 *.ttf
 *.eot
+*.sqlite3
 .env-py27
 RELEASE.sh
 bundle.js
