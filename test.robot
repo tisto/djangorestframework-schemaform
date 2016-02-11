@@ -39,12 +39,12 @@ Open Browser To Login Page
 
 Scenario: As a visitor I can visit the django default page
   Go To  ${SERVER}
-  Wait until page contains element  css=.jumbotron
-  Page Should Contain  Schemaform Demo
-  Click Link  Application
-  Wait for Angular
-  Page should contain element  xpath=//input[@ng-model="model['id']"]
-  Click Link  User
-  Wait for Angular
-  Page should contain element  xpath=//input[@ng-model="model['id']"]
+#  Wait until page contains element  css=.jumbotron
+#  Page Should Contain  Schemaform Demo
+#  Click Link  Application
+#  Wait for Angular
+#  Page should contain element  xpath=//input[@ng-model="model['id']"]
+#  Click Link  User
+#  Wait for Angular
+#  Page should contain element  xpath=//input[@ng-model="model['id']"]
 
