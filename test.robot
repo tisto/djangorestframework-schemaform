@@ -40,7 +40,8 @@ Open Browser To Login Page
 Scenario: As a visitor I can visit the django default page
   Go To  ${SERVER}
   Wait for Angular
-#  Wait until page contains element  css=.jumbotron
+  Log Source
+  Wait until page contains element  css=.jumbotron
 #  Page Should Contain  Schemaform Demo
 #  Click Link  Application
 #  Wait for Angular
