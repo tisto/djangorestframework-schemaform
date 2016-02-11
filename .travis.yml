@@ -8,6 +8,7 @@ node_js:
 env:
   - DJANGO_VERSION=1.8.9
   - DJANGO_VERSION=1.9.2
+  - TRAVIS_NODE_VERSION="4"
 # services: postgresql
 install:
   - if [ $TRAVIS_PYTHON_VERSION == 2.7 ]; then pip install robotframework-djangolibrary robotframework-angularjs Pillow; fi
