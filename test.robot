@@ -4,10 +4,10 @@ ${HOSTNAME}             127.0.0.1
 ${PORT}                 55001
 ${SERVER}               http://${HOSTNAME}:${PORT}/
 ${BROWSER}              firefox
-${DJANGO_PATH}          demo/myserver
-${DJANGO_MANAGE_PY}     demo/manage.py
-${DJANGO_SETTINGS}      myserver.settings
-${DJANGO_DB}            demo/db.sqlite3
+${DJANGO_PATH}          testing/server
+${DJANGO_MANAGE_PY}     testing/manage.py
+${DJANGO_SETTINGS}      server.settings
+${DJANGO_DB}            testing/db.sqlite3
 
 
 *** Settings ***

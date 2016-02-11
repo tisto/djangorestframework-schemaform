@@ -2,8 +2,8 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
-from myserver.models import Application
-from myserver.models import User
+from server.models import Application
+from server.models import User
 from rest_framework_schemaform.serializers import JsonSchemaSerializer
 
 from django.shortcuts import render_to_response
@@ -11,7 +11,7 @@ from django.shortcuts import render_to_response
 
 def index(request):
     return render_to_response(
-        'myserver/index.html'
+        'server/index.html'
     )
 
 

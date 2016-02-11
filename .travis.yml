@@ -20,7 +20,7 @@ before_script:
 #   - psql -c "CREATE DATABASE mydb;" -U postgres
   - nvm install 4.3
   - nvm use 4.3
-  - cd demo
+  - cd testing
   - npm install
   - webpack --bail
   - cd ..
