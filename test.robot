@@ -14,6 +14,7 @@ ${DJANGO_DB}            demo/db.sqlite3
 
 Documentation   Django Robot Tests
 Library         Selenium2Library  timeout=10  implicit_wait=0
+Library         AngularJSLibrary
 Library         DjangoLibrary  ${HOSTNAME}  ${PORT}  path=${DJANGO_PATH}  manage=${DJANGO_MANAGE_PY}  settings=${DJANGO_SETTINGS}  db=${DJANGO_DB}
 Suite Setup     Start Django and open Browser
 Suite Teardown  Stop Django and close Browser
@@ -41,9 +42,9 @@ Scenario: As a visitor I can visit the django default page
   Wait until page contains element  css=.jumbotron
   Page Should Contain  Schemaform Demo
   Click Link  Application
-  Wait until page contains   Model
+  Wait for Angular
   Page should contain element  xpath=//input[@ng-model="model['id']"]
   Click Link  User
-  Wait until page contains   Model
+  Wait for Angular
   Page should contain element  xpath=//input[@ng-model="model['id']"]
 
