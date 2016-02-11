@@ -18,7 +18,10 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - psql -c "CREATE DATABASE mydb;" -U postgres
-  - "cd demo && npm install && npm run build && cd .."
+  - cd demo
+  - npm install
+  - webpack --bail
+  - cd ..
 script:
   - flake8 rest_framework_schemaform
   - tox
