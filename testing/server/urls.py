@@ -1,4 +1,4 @@
-"""myserver URL Configuration
+"""server URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/dev/topics/http/urls/
@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from myserver import views
+from server import views
 
 router = routers.DefaultRouter()
 router.register(r'application', views.ApplicationViewSet)

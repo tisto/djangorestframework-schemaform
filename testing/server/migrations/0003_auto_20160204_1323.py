@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('rest_framework_schemaform', '__first__'),
-        ('myserver', '0002_auto_20151126_1040'),
+        ('server', '0002_auto_20151126_1040'),
     ]
 
     operations = [
