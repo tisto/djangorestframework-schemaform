@@ -13,7 +13,7 @@ ${DJANGO_DB}            demo/db.sqlite3
 *** Settings ***
 
 Documentation   Django Robot Tests
-Library         Selenium2Library  timeout=10  implicit_wait=0
+Library         Selenium2Library  timeout=10  implicit_wait=3
 Library         AngularJSLibrary
 Library         DjangoLibrary  ${HOSTNAME}  ${PORT}  path=${DJANGO_PATH}  manage=${DJANGO_MANAGE_PY}  settings=${DJANGO_SETTINGS}  db=${DJANGO_DB}
 Suite Setup     Start Django and open Browser
