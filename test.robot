@@ -4,13 +4,17 @@ ${HOSTNAME}             127.0.0.1
 ${PORT}                 55001
 ${SERVER}               http://${HOSTNAME}:${PORT}/
 ${BROWSER}              firefox
+${DJANGO_PATH}          demo/myserver
+${DJANGO_MANAGE_PY}     demo/manage.py
+${DJANGO_SETTINGS}      myserver.settings
+${DJANGO_DB}            demo/db.sqlite3
 
 
 *** Settings ***
 
 Documentation   Django Robot Tests
 Library         Selenium2Library  timeout=10  implicit_wait=0
-Library         DjangoLibrary  ${HOSTNAME}  ${PORT}  path=demo/myserver  manage=demo/manage.py  settings=myserver.settings  db=demo/db.sqlite3
+Library         DjangoLibrary  ${HOSTNAME}  ${PORT}  path=${DJANGO_PATH}  manage=${DJANGO_MANAGE_PY}  settings=${DJANGO_SETTINGS}  db=${DJANGO_DB}
 Suite Setup     Start Django and open Browser
 Suite Teardown  Stop Django and close Browser
 
